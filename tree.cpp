@@ -45,3 +45,12 @@ int main(){
     cout << "Total nodes: " << countNodes(root) << "\n";
     return 0;
 }
+int countLeaf(Node* root){
+    if(root == NULL) return 0;
+    if(root->left == NULL && root->right == NULL) return 1;
+
+    int leftCount = countLeaf(root->left);
+    int rightCount = countLeaf(root->right);
+    return leftCount + rightCount;
+
+}
