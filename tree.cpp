@@ -54,3 +54,10 @@ int countLeaf(Node* root){
     return leftCount + rightCount;
 
 }
+int sumOfNodes(Node* root){
+    if(root == NULL) return 0;
+    int LeftSum = sumOfNodes(root->left);
+    int RightSum = sumOfNodes(root->right);
+    return LeftSum + RightSum + root->data;
+}
+
